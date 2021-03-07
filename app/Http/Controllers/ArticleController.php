@@ -17,20 +17,4 @@ class ArticleController extends Controller
             'data' => $articles
         ]);
     }
-
-    public function getOneArticle($id)
-    {
-        $article = Article::find($id);
-        if ($article) {
-            return response()->json([
-                'status'=> true,
-                'errors'=> [],
-                'data' => $article
-                ]);
-        }
-        return response()->json([
-                'status'=> true,
-                'errors'=> "article_not_found",
-                ]);
-    }
 }
